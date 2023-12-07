@@ -1,0 +1,5 @@
+# .env Lokale Konfiguration
+
+USERNAME=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+PASSWD=yyyyyyyyyy
+SYSAP=123.45.67.89
