@@ -98,21 +98,3 @@ class SysAP :
         data["properties"] = properties
         return self.__put(self.REGISTER_VIRTUAL_DEVICE + self.uuid + "/" + serial, data, json = True)
     
-if __name__ == "__main__" :
-    from dotenv import load_dotenv
-    import os
-
-    load_dotenv()
-
-    hostname = os.getenv("SYSAP")
-    username = os.getenv("USERNAME")
-    password = os.getenv("PASSWD")
-
-    sysap = SysAP(hostname, username, password, "00000000-0000-0000-0000-000000000000")
-    # print(sysap.get_datapoint("ABB2889C2851", "ch0010", "idp0000"))
-    # print(sysap.get_device("ABB2889C2851"))
-    # print(sysap.set_datapoint("ABB2889C2851", "ch0010", "idp0000","0"))
-    # print(sysap.get_device("6000A1CA6FE6"))
-    # print(sysap.set_datapoint("6000A1CA6FE6", "ch0000", "odp0000","0"))
-    # print(sysap.set_datapoint("6000A1CA6FE6", "ch0000", "odp0000","0"))
-    print(sysap.register_virtual_device("DROSSEL001", SysAP.DEVTYPE_BINARY_SENSOR, 180, "Virtual Drossel"))
